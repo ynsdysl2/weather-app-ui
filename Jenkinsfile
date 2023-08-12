@@ -19,5 +19,15 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') {
+            steps {
+                echo 'Starting to deploy weather-ui...'
+                dir ("k8s"){
+                    sh 'sudo kubectl apply -f deployment.yaml'
+                    sh 'sudo kubectl apply -f service.yaml'
+                    sh 'sudo kubectl apply -f ingress.yaml'
+                }
+            }
+        }
     }
 }
