@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-app-ui
+  labels:
+    app: weather-app-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather-app-ui
+  template:
+    metadata:
+      labels:
+        app: weather-app-ui
+    spec:
+      containers:
+      - name: weather-app-ui
+        image: wweather-app.duckdns.org/repository/docker/weather-ui:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: regcred
