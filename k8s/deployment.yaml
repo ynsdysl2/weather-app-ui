@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: weather-app-ui
-        image: CHANGEME/repository/docker/weather-ui:latest
+        image: CHANGEME/repository/docker/weather-ui:TAG
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
