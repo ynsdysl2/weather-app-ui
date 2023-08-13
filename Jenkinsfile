@@ -13,8 +13,6 @@ pipeline {
                     sh 'docker build -t localhost:8082/repository/docker/weather-ui:${tag} .'
                     sh 'docker login -u CHANGEME -p CHANGEME http://localhost:8082'
                     sh 'docker image push localhost:8082/repository/docker/weather-ui:${tag}'
-                    sh 'docker tag localhost:8082/repository/docker/weather-ui:${tag} localhost:8082/repository/docker/weather-ui:latest'
-                    sh 'docker image push localhost:8082/repository/docker/weather-ui:latest'
                     sh 'docker system prune -af'
                 }
             }
