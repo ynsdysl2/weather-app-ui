@@ -57,7 +57,7 @@ const SearchCity = () => {
 
                 <div style={{ textAlign: 'left' }}>
                     {error &&
-                        <Alert variant="danger">A system error occured.</Alert>
+                        <Alert variant="danger">A system error occured :((((((.</Alert>
                     }
 
                     {!error && cities.length !== 0 &&
